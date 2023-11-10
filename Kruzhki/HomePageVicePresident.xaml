@@ -1,0 +1,215 @@
+﻿<Window x:Class="Kruzhki.HomePageVicePresident"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kruzhki"
+        mc:Ignorable="d"
+        Title="HomePageTeacher" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <Style x:Key="TB" TargetType="TextBox">
+            <Setter Property="Background" Value="#FFEDEDED"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#00A370"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Padding" Value="5,8,0,0"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontFamily" Value="Britannic Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <Border x:Name="Background" BorderThickness="1" CornerRadius="18" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                      BorderThickness="0"
+                                      Padding="{TemplateBinding Padding}"
+                                      IsTabStop="False"
+                                      Background="{x:Null}"
+                                      TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="Foreground" Value="#FF00E69C"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="btn1" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="30" BorderBrush="Black">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="155"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="125"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="#56C48A" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="120"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="#6DF7AD" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btn2" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="2" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" CornerRadius="20" BorderBrush="Black">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="155"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="45"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="#EDEDED" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="150"  Storyboard.TargetProperty="Width" Duration="0:0:0.3" />
+                                            <DoubleAnimation To="40"  Storyboard.TargetProperty="Height" Duration="0:0:0.3" />
+                                            <ColorAnimation To="White" Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#00E66B" Offset="0"/>
+                <GradientStop Color="#00E6CD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid Height="500" Width="250" HorizontalAlignment="Left">
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00E6CD" Offset="0"/>
+                    <GradientStop Color="#00E66B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.Effect>
+                <DropShadowEffect Direction="100" BlurRadius="30" ShadowDepth="1" Opacity="1"/>
+            </Grid.Effect>
+
+            <TextBlock Text="Добро пожаловать!" FontSize="22" FontWeight="Bold" Margin="10 25 0 0"/>
+            <TextBlock x:Name="teacher_name" Text="Левшов Данил Кириллович" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" Margin="10 80 0 0"/>
+            <Image Source="/Source/logo.png" Width="100" Height="100"/>
+            <StackPanel VerticalAlignment="Bottom" Margin="0 0 0 20">
+                <Button x:Name="btn_logout" Style="{StaticResource btn2}" Content="Выйти" Background="White" FontSize="14" Margin="0 110 0 0" FontFamily="Britannic Bold" Width="150" Height="40" Click="btn_logout_Click"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Width="550" HorizontalAlignment="Right">
+
+            <TextBlock Text="Расписание" FontSize="25" FontWeight="Bold" Margin="27 35 0 0"/>
+            <ListView  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 80 0 0" Width="500" Height="250">
+
+            </ListView>
+
+            <StackPanel Width="160" Height="150" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10 0 0 20">
+                <Button x:Name="btn_check_kruzh" Style="{StaticResource btn1}" Background="#6DF7AD" FontSize="22" Margin="0 20 0 0" FontFamily="Britannic Bold" Width="150" Height="120" Click="btn_check_kruzh_Click">
+                    <TextBlock Text="Просмотр кружков" TextWrapping="Wrap"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Width="160" Height="150" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="200 0 0 20">
+                <Button x:Name="btn_red_kruzh" Style="{StaticResource btn1}" Background="#6DF7AD" FontSize="22" Margin="0 20 0 0" FontFamily="Britannic Bold" Width="150" Height="120" Click="btn_red_kruzh_Click">
+                    <TextBlock Text="Создание кружка" TextWrapping="Wrap"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Width="160" Height="150" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="390 0 0 20">
+                <Button x:Name="btn_teachers" Style="{StaticResource btn1}" Background="#6DF7AD" FontSize="22" Margin="0 20 0 0" FontFamily="Britannic Bold" Width="150" Height="120" Click="btn_teachers_Click">
+                    <TextBlock Text="Просмотр учителей" TextWrapping="Wrap"/>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Name="Toolbar" Width="800" Height="30" VerticalAlignment="Top" Grid.Row="0" Background="Transparent" MouseDown="Toolbar_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Name="MinButt" Height="15" Width="15" Stretch="Fill" Margin="0,3,20,0" MouseDown="MinButt_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Source/palkaneaktiv.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButt}"
+                                     Value="True">
+                                    <Setter Property="Source" Value="/Source/palkaaktiv.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image x:Name="ExitButt" Height="15" Width="15" Stretch="Fill" MouseDown="ExitButt_MouseDown" Margin="0,3,10,0">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Source/krestneaktiv.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=ExitButt}"
+                                     Value="True">
+                                    <Setter Property="Source" Value="/Source/krestaktiv.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
